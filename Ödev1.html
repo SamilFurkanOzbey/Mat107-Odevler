@@ -1,0 +1,118 @@
+<html>
+<p>
+
+kesişim:   ∩  <br>
+birleşim:  ∪  <br>
+ise/madde işareti:  ⇒  <br>
+	   <br>
+	   <br>
+	   <br>
+	   <br>
+
+
+
+1) Kümeler – İşlemler ve Özdeşlik  <br>
+Evrensel küme U içinde A, B, C kümeleri veriliyor. <br>
+Aşağıdaki eşitliği eleman yöntemi veya küme özdeşlikleri kullanarak kanıtlayınız: <br>
+(A ∩ B) ∪ (A ∩ B^c) = A <br>
+
+1.Adım-Dağılanı topla: A∩(B∪B^c) = A <br>
+2.Adım bil:(B∪B^c)=U <br>
+3.Adım bitir:A∩U=A <br>
+Kanıtlandı ✓ <br>
+     <br>
+     <br>
+	   <br>
+	   <br>
+     <br>
+2) Önermeler Mantığı – Doğruluk Tablosu     <br>
+Aşağıdaki önermeyi inceleyiniz:     <br>
+(p → q) ↔ (¬q → ¬p)     <br>
+- Doğruluk tablosu kurarak bunun bir totoloji olup olmadığını belirleyiniz.     <br>
+- Eğer totoloji ise nedenini yorumlayınız.     <br>
+     <br>
+p,q,¬p,¬q,p→q,¬q→¬p,(p→q)↔(¬q→¬p)     <br>
+1,1, 0, 0, 1 ,  1  ,     1     <br>
+1,0, 0, 1, 0 ,  0  ,     1     <br>
+0,1, 1, 0, 1 ,  1  ,     1     <br>
+0,0, 1, 1, 1 ,  1  ,     1     <br>
+⇒Evet, bu bir totolojidir.      <br>
+Bu ifade bir totolojidir çünkü (p ⇒ q) önermesi, her zaman kendi karşıt tersine yani (¬q→¬p) ifadesine mantıksal olarak denktir.     <br>
+     <br>
+     <br>
+	   <br>
+	   <br>
+     <br>
+3) Mantıksal Denklem – Eşdeğerlik    <br>
+Aşağıdaki mantıksal ifadeyi sadece ¬ ve ∨ işlemleri kullanarak yeniden yazınız:	   <br>
+p ∧ (q → r)	   <br>
+(İpucu: Önce koşullu önermeyi eşdeğer forma çeviriniz.)	   <br>
+	   <br>
+1.Adım,hatırla ve yaz: (q⇒r = -qvr)   ⇒   p^(-qvr)	   <br>
+2.Adım,de morganı hatırla:-(AvB)=-A^-B	   <br>
+3.Adım,bitir: -(-pv-(-qvr))	   <br>
+	   <br>
+	   <br>
+	   <br>
+	   <br>
+	   <br>
+4) Doğrudan Kanıt Sorusu	   <br>
+Önerme: İki tek tam sayının toplamı çifttir.	   <br>
+- Tanım kullanarak doğrudan kanıt yöntemi ile ispatlayınız.	   <br>
+- Sayıları cebirsel olarak ifade ederek ilerleyiniz.	   <br>
+	   <br>
+1. Adım: Tanımları Belirle (Cebirsel İfade)	   <br>
+Bir sayının "tek" veya "çift" olmasının matematiksel bir formülü vardır:	   <br>
+Çift Sayı: 2'nin tam katıdır.Yani 2k şeklinde yazılır (k bir tam sayı).	   <br>
+Tek Sayı: 2'nin bir katından 1 fazladır. Yani 2k+1 şeklinde yazılır.	   <br>
+Şimdi iki farklı tek sayı seçelim:	   <br>
+Birinci tek sayı: x = 2n + 1 (burada n bir tam sayı)	   <br>
+İkinci tek sayı: y = 2m + 1 (burada m bir tam sayı)	   <br>
+	   <br>
+2. Adım: Toplama İşlemini Yap	   <br>
+Soru bizden bu iki sayıyı toplamamızı istiyor.	   <br> 
+Hadi toplayalım:x + y = (2n + 1) + (2m + 1)	   <br>
+Şimdi parantezleri açıp benzer terimleri yan yana getirelim:	   <br>
+x + y = 2n + 2m + 1 + 1	   <br>
+ x + y = 2n + 2m + 2	   <br>
+	   <br>
+3. Adım: Ortak Paranteze Al ve Sonucu Yorumla	   <br>
+Şimdi ifadenin tamamını 2 parantezine alalım:x + y = 2(n + m + 1)	   <br>
+Burada durup düşünelim. n, m ve 1 birer tam sayı olduğuna göre, bunların toplamı olan (n + m + 1) de kesinlikle bir tam sayıdır.	   <br>
+ Biz bu yeni tam sayıya K diyelim.O zaman ifademiz şu hale geldi:x + y = 2	   <br>
+Sonuç:Bulduğumuz 2K ifadesi, çift sayı tanımının ta kendisidir! (Çünkü 2'nin tam bir katı)	   <br>
+	   <br>
+	   <br>
+	   <br>
+	   <br>
+	   <br>
+5) Çelişki ile Kanıt (Proof by Contradiction)	   <br>
+Önerme: n^2 çift ise n çifttir.	   <br>
+- Önermeyi çelişki yöntemiyle kanıtlayınız.	   <br>
+- Varsayımınızı açıkça yazınız ve hangi adımda çelişki elde ettiğinizi belirtiniz	   <br>
+	   <br>
+1. Adım: Varsayım (Tersini Kabul Etme)	   <br>
+Önermemiz "n^2 çift ise n çifttir" diyor.Biz bunun tam tersini varsayalım:	   <br>
+Varsayım: "n^2 çift olsun ama n tek olsun."	   <br>
+2. Adım: Cebirsel İlerleme	   <br>
+Madem n tek bir sayıdır dedik, o zaman n'i şöyle yazabiliriz:	   <br>
+n = 2k + 1(burada k bir tam sayıdır)	   <br>
+	   <br>
+Şimdi bu n sayısının karesini alalım 	   <br>
+n^2 = (2k + 1)^2	   <br>
+n^2 = (2k + 1)*(2k + 1)	   <br>
+n^2 = 4k^2 + 4k + 1	   <br>
+	   <br>
+3. Adım: Düzenleme ve Çelişkiyi Yakalama	   <br>
+Şimdi bu ifadeyi 2 parantezine alalım:	   <br>
+n^2 = 2(2k^2 + 2k) + 1	   <br>
+Parantez içindeki (2k^2 + 2k) bir tam sayıdır, buna m diyelim.	   <br> 
+Sonuç ne oldu? n^2 = 2m + 1	   <br>
+4. Adım: Çelişkiyi Belirtme	   <br>
+Dur bir dakika! Biz en başta neyi kabul etmiştik? n^2 çift olsun demiştik.Ama yaptığımız işlemler sonucunda n^2 sayısı tek çıktı (2m+1 formunda).Başlangıç kabulü: n^2 çifttir.Ulaşılan sonuç: n^2 tektir.İşte bu bir ÇELİŞKİDİR! 	   <br>
+	   <br>
+<head>
+	ŞAMİL FURKAN ÖZBEY
+<head>
+<p>
+<html>
