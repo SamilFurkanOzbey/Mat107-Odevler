@@ -1,0 +1,281 @@
+<html>
+<p>
+Soru 1 — EBOB ve Öklid Algoritması	   <br>
+a) EBOB(414, 662) 	   <br>
+Bulun:Öklid algoritması büyük sayıyı küçüğe bölüp kalanla ilerler:	   <br>
+	   <br>
+662 = 1 * 414 + 248	   <br>
+414 = 1 * 248 + 166	   <br>
+248 = 1 * 166 + 82	   <br>
+166 = 2 * 82 + 2	   <br>
+82 = 41 * 2 + 0	   <br>
+Sonuç: Kalan 0 olmadan önceki son pozitif kalan 2'dir. EBOB = 2	   <br>
+	   <br>
+b) Pseudocode:	   <br>
+function EBOB(a, b):	   <br>
+    while b!= 0:	   <br>
+        kalan = a mod b	   <br>
+        a = b	   <br>
+        b = kalan	   <br>
+    return a	   <br>
+	   <br>
+c) Zaman Karmaşıklığı:	   <br>
+O(log(min(a, b))). Logaritmik bir büyüklüktür çünkü her adımda sayılar hızla küçülür.	   <br>
+Ekstra:	   <br>
+Döngü yoksa ⇒ O(1)	   <br>
+Bir for döngüsü varsa ve n'e kadar gidiyorsa ⇒ O(n)	   <br>
+İç içe iki for döngüsü varsa ⇒ O(n^2)	   <br>
+Sürekli ikiye bölerek ilerliyorsa ⇒ O(log n)	   <br>
+	   <br>
+	   <br>
+	   <br>
+Soru 2 — Modüler Aritmetik	   <br>
+Verilenler: m=5, e=13, n=23. 	   <br>
+İşlem: m^e (mod n) ⇒ 5^{13}(mod 23).	   <br>
+Bunu "Hızlı Üs Alma" ile yapalım:	   <br>
+5^2 =* 2 (mod 23)	   <br>
+5^4 =* 2^2 (mod 23)	   <br>
+5^8 =* 4^2 (mod 23)	   <br>
+5^{13} = 5^8 * 5^4 * 5^1 ⇒ 16 * 4 * 5 = 320	   <br>
+320 (mod 23) için: 320 / 23 = 13.91  23*13 = 299	   <br>
+320 - 299 = 21	   <br>
+	   <br>
+	   <br>
+	   <br>
+
+Soru 3 — Asallık Testi	   <br>
+	   <br>
+a) 97 için Yaklaşım: ✓97 = 9.8.Yani 2, 3, 5, 7 asallarına bölünüp bölünmediğine bakmak yeterlidir.97 bunlara bölünmez, o halde asaldır.	   <br>
+b) Neden ✓n?: Çünkü eğer n = a*b ise, çarpanlardan en az biri ✓n'den küçük veya ona eşit olmak zorundadır. Küçük olanı bulamazsak büyük olanı aramaya gerek kalmaz.	   <br>
+c) Pseudocode:	   <br>
+function isPrime(n):	   <br>
+    if n < 2: return false	   <br>
+    for i from 2 to sqrt(n):	   <br>
+        if n mod i == 0: return false	   <br>
+    return true	   <br>
+	   	   <br>
+	   <br>
+	   <br>
+Soru 4 — Hash Table	   <br>
+Fonksiyon: h(k) = k (mod 10) (m belirtilmemiş ama genelde hane sayısına göre seçilir, 10 alalım).	   <br>
+	   <br>
+a) Hash Değerleri:	   <br>
+27⇒ 7,  38 ⇒ 8,  14 ⇒ 4,  25 ⇒ 5,  36 ⇒ 6.	   <br>
+	   <br>
+b) Çakışma: Bu örnekte (m=10 için) çakışma yok. Eğer m=5 olsaydı: 27 =* 2 ve 32 =* 2 çakışırdı.	   <br>
+	   <br>
+c) Modun Önemi: Büyük veri setlerini sınırlı bir bellek alanına (dizi indislerine) hızlıca haritalamak için en verimli yoldur.	   <br>
+	   <br>	   <br>	   <br>
+Soru 5	   <br>
+a)6 işlem ⇒ 6! = 720	   <br>
+	   <br>
+b)İki işlem yan yana ⇒ (Paketledik) 5! * 2! = 120 * 2 =  240	   <br>
+	   <br>	   <br>	   <br>
+
+Soru 6 Sayma ve Sıralama	   <br>
+a)10 rakamdan 4'lü kod ⇒ P(10, 4) = 10 * 9 * 8 * 7 =  5040	   <br>
+	   <br>
+b)İlk hane 0 olamaz ⇒ 9 * 9 * 8 * 7 =  4536	   <br>
+	   <br>
+	   <br>
+	   <br>
+Soru 7 — Backtracking ve Rekürsif	   <br>
+a) Permütasyon: 4 harf (A, B, C, D) ⇒ 4! =  {24}.	   <br>
+	   <br>
+b)	   <br>
+PROCEDURE generatePermutations(liste, sol, sag)	   <br>
+    IF sol == sag THEN	   <br>
+        PRINT arr	   <br>
+    ELSE	   <br>
+        FOR i FROM sol TO sag DO	   <br>
+	   <br>         
+            SWAP(liste[sol], liste[i])	   <br>
+            	   <br>
+            generatePermutations(liste, sol + 1, sağ)	   <br>
+            	   <br>
+            SWAP(liste[sol], liste[i])	   <br>
+        END FOR	   <br>
+    END IF	   <br>
+END PROCEDURE	   <br>
+	   <br>
+c) Maliyet: O(n!) olur. Çünkü her yeni eleman için tüm olasılıklar dallanarak artar (Faktöriyel büyüme en "pahalı" maliyetlerden biridir).	   <br>
+	   <br>	   <br>	   <br>
+
+Soru 8 9, 10 — Seçme (Kombinasyon)	   <br>
+	   <br>	   <br>	   <br>
+Soru 8: 	   <br>
+a)8 kişiden 3 kişi ⇒ {8}{3} = {8 * 7 * 6}{3 * 2 * 1} =  {56}	   <br>
+b)Sıra Neden Önemli Değil?: Çünkü ekipteki kişilerin görevi aynıdır; {Ali, Veli} seçmekle {Veli, Ali} seçmek aynı grubu oluşturur.	   <br>
+	   <br>	   <br>	   <br>
+Soru 9: 	   <br>
+10 özellikten 4 tane ⇒ {10}{4} =  {210}.	   <br> 
+Brute force (tüm ihtimalleri denemek) küçük sayılarda pratiktir ama özellik sayısı 100 olsaydı imkansız olurdu.	   <br>
+	   <br>	   <br>	   <br>
+Soru 10	   <br>
+a: 12 sunucudan 2 tane ⇒ {12}{2} = {12 * 11}{2} =  66.	   <br>
+b: Biri zorunluysa, geriye kalan 11 sunucudan 1 tane seçeriz ⇒ {11}{1} =  {11}.	   <br>
+	   <br>
+	   <br>	   <br>
+Soru 11 & 12 — Binom ve Olasılık	   <br>	   <br>	   <br>
+Soru 11: Pascal Üçgeni İlişkisi	   <br>
+Binom açılımındaki (a+b)^n ifadesinin katsayıları, Pascal üçgeninin n. satırındaki sayılardır.	   <br>
+Örneğin (a+b)^2 = 1a^2 + 2ab + 1b^2 katsayıları (1, 2, 1), üçgenin ilgili satırıdır.	   <br>
+	   <br>
+	   <br>
+	   <br>
+
+Soru 12: Olasılık ve Bit Dizileri	   <br>
+Hata Olasılığı: 10 paketten 2'sinin hatalı gelme formülü: P(X=2) = {10}{2} * p^2 * (1-p)^{10-2}	   <br>
+
+8 Bit Dizisinde 3 Tane '1': Bu, 8 boşluktan 3 tanesini seçmektir.{8}{3} = {8 * 7 * 6}{3 * 2 * 1} = 56 farklı dizi vardır.	   <br>
+
+
+Soru 14 & 15 — Faktöriyel ve Kombinasyon (Pseudocode)	   <br>
+	   <br>	   <br>	   <br>
+Soru 14: Faktöriyel	   <br>
+Iterative (Döngüsel): Bir for döngüsüyle 1'den n'e kadar çarpar. Bellek dostudur.	   <br>
+Recursive (Özyinelemeli): Fonksiyonun kendisini çağırmasıdır (n! = n * (n-1)!). Kod daha şıktır ama bellek (stack) harcar.	   <br>
+	   <br>	   <br>	   <br>
+
+Soru 15: Kombinasyon Hesaplayan Pseudocode	   <br>
+Pascal Bağıntısı ile (Recursive): C(n,r) = C(n-1, r-1) + C(n-1, r)	   <br>
+FUNCTION Faktoriyel(sayi):	   <br>
+    sonuc = 1	   <br>
+    FOR i FROM 1 TO sayi:	   <br>
+        sonuc = sonuc * i	   <br>
+    RETURN sonuc	   <br>
+
+FUNCTION Kombinasyon_Faktoriyel(n, r):	   <br>
+    // n'den küçük r değerleri için hesaplama yapılır	   <br>
+    pay = Faktoriyel(n)	   <br>
+    payda = Faktoriyel(r) * Faktoriyel(n - r)	   <br>
+    RETURN pay / payda	   <br>
+
+	   <br>
+	   <br>
+	   <br>
+
+Soru 16 — Modüler Üs Alma (Hızlı Üs Alma)	   <br>
+	   <br>
+ALGORİTMA HizliUsAlma(taban, us, mod_degeri)	   <br>
+    sonuc = 1	   <br>
+    taban = taban MOD mod_degeri	   <br>
+    	   <br>
+    WHILE us > 0 DO	   <br>
+        // Eğer üs tek sayı ise, sonucu mevcut taban ile çarp	   <br>
+        IF (us MOD 2 == 1) THEN	   <br>
+            sonuc = (sonuc * taban) MOD mod_degeri	   <br>
+        END IF	   <br>
+        
+        // Üssü yarıya indir (Tam bölünür)	   <br>
+        us = us / 2	   <br>
+        
+        // Tabanın karesini al ve modunu al (Sayıyı küçük tut)	   <br>
+        taban = (taban * taban) (MOD mod_degeri)	   <br>
+    END WHILE	   <br>
+    
+    RETURN sonuc	   <br>
+
+Neden doğrudan üs almaktan verimlidir?	   <br>
+Cevap: Çünkü doğrudan a^b hesaplamak çok büyük sayılar (overflow) üretir. Hızlı üs alma (Square and Multiply) her adımda mod alarak sayıları küçük tutar ve işlem sayısını O(b)'den O(log b)'ye düşürür.	   <br>
+	   <br>
+	   <br>
+	   <br>
+Soru 17 — Tüm Altkümeleri Üretme (Power Set)	   <br>
+[1, 2, 3] Girişi: Toplam 2^n yani 2^3 = {8} altküme oluşur.	   <br>
+Kombinasyon İlişkisi: Altküme sayısı, aslında {n}{0} + {n}{1} + ... + {n}{n} toplamına eşittir.	   <br>
+	   <br>
+ALGORITHM GenerateSubsets(dizi, index, current_subset)	   <br>
+    // BASE CASE: Eğer dizinin sonuna geldiysek altkümeyi yazdır	   <br>
+    IF index == dizi.length THEN	   <br>
+        PRINT current_subset	   <br>
+        RETURN	   <br>
+    END IF	   <br>
+	   <br>
+    // 1. OPTION: Mevcut elemanı altkümeye DAHİL ETME (Exclude)	   <br>
+    GenerateSubsets(dizi, index + 1, current_subset)	   <br>
+	   <br>
+    // 2. OPTION: Mevcut elemanı altkümeye DAHİL ET (Include)	   <br>
+    current_subset.add(dizi[index])	   <br>
+    GenerateSubsets(dizi, index + 1, current_subset)	   <br>
+    	   <br>
+    // BACKTRACKING: Eklediğimiz elemanı geri çıkar	   <br>
+    current_subset.remove(dizi[index])	   <br>
+	   <br>
+END ALGORITHM	   <br>
+
+	   <br>	   <br>	   <br>
+Soru 18 — Güvenlik + Kombinasyon	   <br>
+	   <br>
+a) 7 modülden 3 aktif: {7}{3} = {7 * 6 * 5}{3 * 2 * 1} = 35 politika.	   <br>
+b) 1 modül zorunluysa: Geriye kalan 6 modülden 2 tane seçeriz: {6}{2} = {6 * 5}{2} = 15 politika.	   <br>
+	   <br>	   <br>	   <br>
+
+
+Soru 19 — Sayılar Teorisi (Asal Listeleme)	   <br>
+a) Basit Yöntem: 1'den N'e kadar her sayı için isPrime(n) fonksiyonunu çağırmak.	   <br>
+ALGORITHM ListPrimes(N)	   <br>
+    FOR i FROM 2 TO N DO	   <br>
+        isPrime = TRUE	   <br>
+        
+        // i'nin asal olup olmadığını kontrol et (2'den kök i'ye kadar)	   <br>
+        FOR j FROM 2 TO SQRT(i) DO	   <br>
+            IF i MOD j == 0 THEN	   <br>
+                isPrime = FALSE	   <br>
+                BREAK // Bölünen bulduk, döngüden çık	   <br>
+            END IF	   <br>
+        END FOR	   <br>
+        	   <br>
+        IF isPrime == TRUE THEN	   <br>
+            PRINT i	   <br>
+        END IF	   <br>
+    END FOR	   <br>
+END ALGORITHM	   <br>
+	   <br>	   	   <br>
+
+
+b) Verimli Yöntem: Eratosten Kalburu (Sieve of Eratosthenes). Sayıları silerek ilerler ve çok daha hızlıdır.	   <br>
+ALGORITHM SieveOfEratosthenes(N)	   <br>
+    // 1. ADIM: N boyutunda bir BOOLEAN dizi oluştur ve hepsini TRUE yap	   <br>
+    // (Başlangıçta her sayıyı asal kabul ediyoruz)	   <br>
+    isPrime = ARRAY of size N+1 filled with TRUE	   <br>
+    	   <br>
+    // 0 ve 1 asal değildir, onları FALSE yap	   <br>
+    isPrime[0] = FALSE	   <br>
+    isPrime[1] = FALSE	   <br>
+	   <br>
+    // 2. ADIM: 2'den kök N'e kadar olan sayıları kontrol et	   <br>
+    FOR p FROM 2 TO SQRT(N) DO	   <br>
+        // Eğer p hala asal olarak işaretliyse, onun katlarını ele	   <br>
+        IF isPrime[p] == TRUE THEN	   <br>
+            // p'nin katlarını (2p, 3p, 4p...) FALSE (asal değil) yap	   <br>
+            FOR i FROM p*p TO N STEP p DO	   <br>
+                isPrime[i] = FALSE	   <br>
+            END FOR	   <br>
+        END IF	   <br>
+    END FOR	   <br>
+
+    // 3. ADIM: TRUE kalan tüm indisleri yazdır (Bunlar asallardır)	   <br>
+    FOR i FROM 2 TO N DO	   <br>
+        IF isPrime[i] == TRUE THEN	   <br>
+            PRINT i	   <br>
+        END IF	   <br>
+    END FOR	   <br>
+END ALGORITHM	   <br>
+
+	   <br>	   <br>	   <br>
+Soru 20 — Permütasyon ve Brute Force	   <br>
+a) 5 karakterli (tümü farklı): 5! = {120} olasılık.	   <br>
+b) İkisi aynıysa (Tekrarlı Permütasyon): {5!}{2!} = {120}{2} = {60} olasılık.	   <br>
+c) Hesaplama Maliyeti: Olasılık sayısı azaldığı için brute force (kaba kuvvet) saldırısının deneme sayısı azalır, yani şifre daha kolay kırılır.	   <br>
+
+
+	   <br>	   <br>	   <br>
+
+
+
+<head>
+	ŞAMİL FURKAN ÖZBEY
+<head>
+<p>
+<html>
